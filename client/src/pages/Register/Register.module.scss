@@ -1,0 +1,27 @@
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    width: clamp(300px, 50%, 400px);
+
+    .body {
+      padding-bottom: 0 !important;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .submitButton {
+      width: 100%;
+    }
+
+    .registerButton {
+      text-align: center;
+    }
+  }
+}
