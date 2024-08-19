@@ -14,7 +14,7 @@ app.use(express.json());
 connectDB();
 
 app.use(authRoutes, authRouter);
-app.use(usersRoutes, usersRouter);
+app.use(usersRoutes, tokenMiddleware, usersRouter);
 app.use(postsRoutes, tokenMiddleware, postsRouter);
 
 app.listen(port, () => {

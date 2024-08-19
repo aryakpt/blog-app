@@ -6,7 +6,6 @@ export const authRoutes = '/api/auth';
 const authRouter = Router();
 
 authRouter.post('/register', authController.register);
-authRouter.get('/login', authController.login);
-authRouter.post('/logout', authController.logout);
+authRouter.post('/login', authController.login);
 
 export default authRouter;
