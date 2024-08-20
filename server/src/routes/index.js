@@ -1,3 +1,7 @@
-export {default as postsRouter, postsRoutes} from './postsRouter.js';
-export {default as authRouter, authRoutes} from './authRouter.js';
-export {default as usersRouter, usersRoutes} from './usersRouter.js';
+export { default as postsRouter, postsRoutes } from './posts.router';
+export { default as authRouter, authRoutes } from './auth.router';
+export { default as usersRouter, usersRoutes } from './users.router';
+export {
+  default as categoriesRouter,
+  categoriesRoutes,
+} from './categories.router';

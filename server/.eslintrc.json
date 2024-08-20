@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"]  // This maps '@' to './src'
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "env": {
+    "node": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "off",
+    "eslint-plugin-import/no-unresolved":"off",
+    "no-useless-catch":"off"
+  }
+}

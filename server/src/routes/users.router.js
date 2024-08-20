@@ -1,5 +1,5 @@
-import db from '../config/db.js';
-import {Router} from 'express';
+import db from '@/config/db';
+import { Router } from 'express';
 
 export const usersRoutes = '/api/users';
 

@@ -1,12 +1,12 @@
 import mysql from 'mysql2';
-import config from './config.js';
+import config from './config';
 
 const db = mysql.createPool(config);
 
 export const connectDB = async () => {
   db.getConnection((err, connection) => {
     if (err) {
-      console.log({error: err.message});
+      console.log({ error: err.message });
     }
 
     console.log('Connected to MySQL database');

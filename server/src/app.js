@@ -1,12 +1,20 @@
 import express from 'express';
 import cors from 'cors';
-import {connectDB} from './config/db.js';
 
-import {authRouter, authRoutes, postsRouter, postsRoutes, usersRouter, usersRoutes} from './routes/index.js';
-import {tokenMiddleware} from './middlewares/index.js';
+import {
+  authRouter,
+  authRoutes,
+  categoriesRouter,
+  categoriesRoutes,
+  postsRouter,
+  postsRoutes,
+  usersRouter,
+  usersRoutes,
+} from '@/routes';
+import { tokenMiddleware } from '@/middlewares';
+import { connectDB } from '@/config/db';
 
 const app = express();
-const port = 8800;
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +24,6 @@ connectDB();
 app.use(authRoutes, authRouter);
 app.use(usersRoutes, tokenMiddleware, usersRouter);
 app.use(postsRoutes, tokenMiddleware, postsRouter);
+app.use(categoriesRoutes, tokenMiddleware, categoriesRouter);
 
-app.listen(port, () => {
-  console.log(`listening on port http://localhost:${port}`);
-});
+export default app;
