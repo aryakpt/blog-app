@@ -1,6 +1,10 @@
 {
   "settings": {
     "import/resolver": {
+      "node": {
+        "paths": ["./src"], // Adjust this to your alias base path
+        "extensions": [".js", ".jsx", ".ts", ".tsx"] // Add other extensions if needed
+      },
       "alias": {
         "map": [
           ["@", "./src"]  // This maps '@' to './src'

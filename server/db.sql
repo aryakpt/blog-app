@@ -119,6 +119,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `role` enum('admin','author') NOT NULL DEFAULT 'author',
   `phone` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'','arya@admin.com','$2a$10$vo6y7crOpM0.vRmXI0zWJ.17WjegNIWye2oFA0U9DF3GFeM7Q.mti','arya',NULL,NULL,NULL),(2,'arya2','arya2@admin.com','$2a$10$XkZ0yMdxBf6o4.IdF9xmk.At2JY0MaXdgFTnfMF1sXSX9RD8G76se','085213123',NULL,'2024-08-20 21:23:38','2024-08-20 21:23:38');
+INSERT INTO `users` VALUES (1,'','arya@admin.com','$2a$10$vo6y7crOpM0.vRmXI0zWJ.17WjegNIWye2oFA0U9DF3GFeM7Q.mti','author','arya',NULL,NULL,NULL),(2,'arya2','arya2@admin.com','$2a$10$XkZ0yMdxBf6o4.IdF9xmk.At2JY0MaXdgFTnfMF1sXSX9RD8G76se','author','085213123',NULL,'2024-08-20 21:23:38','2024-08-20 21:23:38');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -146,4 +147,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-20 23:05:48
+-- Dump completed on 2024-08-21 17:26:18
