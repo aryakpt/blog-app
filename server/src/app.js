@@ -11,7 +11,6 @@ import {
   usersRouter,
   usersRoutes,
 } from '@/routes';
-import { tokenMiddleware } from '@/middlewares';
 import { connectDB } from '@/config/db';
 
 const app = express();
@@ -22,8 +21,8 @@ app.use(express.json());
 connectDB();
 
 app.use(authRoutes, authRouter);
-app.use(usersRoutes, tokenMiddleware, usersRouter);
-app.use(postsRoutes, tokenMiddleware, postsRouter);
-app.use(categoriesRoutes, tokenMiddleware, categoriesRouter);
+app.use(usersRoutes, usersRouter);
+app.use(postsRoutes, postsRouter);
+app.use(categoriesRoutes, categoriesRouter);
 
 export default app;

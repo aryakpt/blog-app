@@ -7,33 +7,32 @@ const usersRepository = {
     return new Promise((resolve, reject) => {
       db.query(query, [email], (err, data) => {
         if (err) {
-          reject(new CustomError({ status: 500, message: err }));
+          reject(new CustomError({ status: 500, message: err.message }));
         } else {
           resolve(data[0]);
         }
       });
     });
   },
-  async insert({ name, email, password, phone, image, currentDateTime }) {
+  async insert({
+    name,
+    email,
+    password,
+    phone,
+    image,
+    role,
+    createdAt,
+    updatedAt,
+  }) {
     const query =
-      'INSERT INTO users (name, email, password, phone, image, created_at, updated_at) VALUES (?)';
+      'INSERT INTO users (name, email, password, phone, image, role, created_at, updated_at) VALUES (?)';
     return new Promise((resolve, reject) => {
       db.query(
         query,
-        [
-          [
-            name,
-            email,
-            password,
-            phone,
-            image,
-            currentDateTime,
-            currentDateTime,
-          ],
-        ],
+        [[name, email, password, phone, image, role, createdAt, updatedAt]],
         (err) => {
           if (err) {
-            reject(new CustomError({ status: 500, message: err }));
+            reject(new CustomError({ status: 500, message: err.message }));
           } else {
             resolve(true);
           }

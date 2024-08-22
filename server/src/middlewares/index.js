@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export { default as tokenMiddleware } from './tokenMiddleware';
+export { default as adminMiddleware } from './adminMiddleware';

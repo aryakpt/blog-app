@@ -1,3 +1,3 @@
-const usersController = {};
+const commentsController = {};
 
-export default usersController;
+export default commentsController;

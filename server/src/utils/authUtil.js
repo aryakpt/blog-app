@@ -4,8 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const authUtil = {
-  generateAccessToken(userId) {
-    return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  generateAccessToken({ userId, name, email, role }) {
+    return jwt.sign({ userId, name, email, role }, process.env.JWT_SECRET, {
+      expiresIn: '1d',
+    });
   },
 };
 
