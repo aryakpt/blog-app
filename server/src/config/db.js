@@ -1,7 +1,7 @@
 import mysql from 'mysql2';
 import config from './config';
 
-const db = mysql.createPool(config);
+const db = mysql.createPool(config.db);
 
 export const connectDB = async () => {
   db.getConnection((err, connection) => {

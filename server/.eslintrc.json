@@ -27,6 +27,7 @@
     "prettier/prettier": "error",
     "no-console": "off",
     "eslint-plugin-import/no-unresolved":"off",
-    "no-useless-catch":"off"
+    "no-useless-catch":"off",
+    "consistent-return":"off"
   }
 }

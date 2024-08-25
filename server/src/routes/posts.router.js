@@ -1,11 +1,10 @@
+import { postsController } from '@/controllers';
 import { Router } from 'express';
 
 export const postsRoutes = '/api/posts';
 
 const postsRouter = Router();
 
-postsRouter.get('/', (req, res) => {
-  res.sendStatus(200);
-});
+postsRouter.get('/', postsController.getPosts);
 
 export default postsRouter;

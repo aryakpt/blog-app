@@ -10,6 +10,8 @@ import {
   postsRoutes,
   usersRouter,
   usersRoutes,
+  fileRouter,
+  fileRoutes,
 } from '@/routes';
 import { connectDB } from '@/config/db';
 
@@ -20,6 +22,7 @@ app.use(express.json());
 
 connectDB();
 
+app.use(fileRoutes, fileRouter);
 app.use(authRoutes, authRouter);
 app.use(usersRoutes, usersRouter);
 app.use(postsRoutes, postsRouter);
